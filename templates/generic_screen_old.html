@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vois.ai</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<style>
+		.content{
+		position: relative;	
+		width:700px;
+    height: 100vh;
+    margin:0 auto;
+    background:#F8F9FA		
+		}
+	</style>
+	
+		
+</head>
+<body>
+<div class="content">	
+<header style="height:50px;background:#D45C21;text-align:center;font-weight:bold;color:#ffff;font-size:35px">VOIS.AI</header>	
+{% block body %}{% endblock %}	
+</div>
+		
+<script type="text/javascript" src="{{ url_for('static', filename='mediaDevices-getUserMedia-polyfill.js') }}"></script>	
+		<script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>		
+</body>
+</html>

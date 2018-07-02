@@ -1,0 +1,210 @@
+{% extends 'generic_screen.html' %}
+{% block body %}
+ <p class="headr" id="recording-instructions" style="text-align:center;margin-top:4%;margin-bottom:4%">Press the <strong>Start Recording</strong> button and allow access.</p> 
+<div class="gn">
+	<div class="mc"></div>
+	<div class="sinf">
+		<b><font size="5px">Your Speech</font><br/>
+		<font color="#A9A9A9">0:20 seconds<br/>
+		<div id ="wordCount" width="10 px">0 words</div></font><br/></b>
+    <button class ="btn" id="an_btn" style="margin-left:200px;margin-top:-60px;display:none">ANALYZE</button>
+	</div>
+</div>
+
+<form class="form-signin" method="post"  role="form">
+<textarea type="text" name="sp_area" id="sptext" style="width:675px;height:220px" placeholder="Create speech transcript by typing or using voice recognition."></textarea>
+</form>
+<div class="bt1">
+    <button  id="start-record-btn" class ="btn">START RECORDING</button><btn>
+    <button  id="pause-record-btn" class ="btn"  >STOP RECORDING</button><btn>  
+  </div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 style="font-size:25px;padding:4px">Useful Statistics</h2>
+      <span class="close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p class="analytics_count">
+      </p>
+    </div>
+  </div>
+
+</div>
+  <!-- Model ends -->
+  
+<style>
+ .btn {
+    height:50px;
+    width:250px;
+    background:#D45C21;
+    text-align:center;
+    font-weight:bold;
+    color:#ffff;
+    font-size:20px;
+    margin:5px;
+    margin-left: 40px;
+    margin-right: 40px;
+ }
+ 
+
+ .bt1{
+  text-align: center;
+ }
+  .headr {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%; 
+    text-align:center;
+    width:450px;
+    font-size: 20px;
+  }
+
+	.gn{
+  position:relative;
+  margin: 6% auto;
+  margin-left: 6%;
+  margin-top: 1%; 
+  background: #f46b45;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #eea849, #f46b45);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius:50%;
+  width:7em; height:7em;
+
+}
+:before, :after{
+  content:'';
+  position:absolute;
+  background-color:#fff;
+}
+.gn:after{
+  top:30%; left:41%;
+  height:20%; width:15%;
+  border-top-left-radius:50%;
+  border-top-right-radius:50%;
+}
+.gn:before{
+  top:37%; left:41%;
+  height:20%; width:15%;
+  border-bottom-left-radius:50%;
+  border-bottom-right-radius:50%;
+}
+.mc{
+  position:absolute;
+  float: left;
+  top:58%; left:35.5%;
+  height:24%;
+  width:26.5%;
+  overflow:hidden;
+}
+.mc:before{
+  bottom:46%;
+  width:100%; height:100%;
+  box-sizing:border-box;
+  border-radius:50%;
+  border:0.5em solid #fff;
+  background:none;
+}
+.mc:after{
+  top:50%; left:38%;
+  width:25%; height:25%;
+}
+
+.sinf{
+	position: relative;
+	width:15em; height:7em;
+	left:150px;
+
+}
+
+#sptext{
+	border:1px solid #D45C21;
+  padding-top: -10px;
+	width: 42em;
+	height: 15em;
+	text-align: left;
+	margin-top:-4%;
+	margin-left:2%;
+	margin-right: 1%;  
+}
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+      margin:0 auto;
+    width: 700px; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-header {
+  position: relative;
+  float:left;
+
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #D45C21;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+
+
+	</style>	
+
+{% endblock %}
