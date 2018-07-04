@@ -33,7 +33,6 @@ protobuf==3.5.2
 pyad==0.5.20
 pyasn1==0.4.2
 pyasn1-modules==0.2.1
-PyAudio==0.2.11
 pydub==0.20.0
 pyreadline==2.1
 python-dateutil==2.7.3
