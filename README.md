@@ -1,4 +1,4 @@
-Application name: VOIS.AI
+# Application name: VOIS.AI
 
 Application goal: The goal of the app is to analyze a person’s speech to understand what words a person tends to use too often and what words that person should avoid, such as “like,” “I mean,” “you know,” etc.
 
